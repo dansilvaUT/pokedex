@@ -27,6 +27,7 @@ class Pokedex extends Component {
                     <Entry
                         key={p.id}
                         entry={p}
+                        catchPokemon={this.props.catchPokemon}
                     />
                 ))}
             </section>
