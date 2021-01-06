@@ -10,7 +10,7 @@ module.exports = {
                 res.status(200).send(pokemon);
             })
             .catch(err => console.log(`Error: ${err.message}`));
-
+        //TODO get opponent pokemon too
 
     }
 }

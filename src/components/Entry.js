@@ -14,7 +14,6 @@ class Entry extends Component {
 
     }
     render() {
-        console.log(this.props)
         const { entry } = this.props;
         return (
             <section>

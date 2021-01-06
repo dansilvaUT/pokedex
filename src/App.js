@@ -1,6 +1,7 @@
 import { Component } from 'react';
 import Pokedex from './components/Pokedex';
 import MyPokemon from './components/MyPokemon';
+import Opponent from './components/Opponent';
 import './App.css';
 import axios from 'axios';
 
@@ -8,7 +9,8 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      myPokemon: []
+      myPokemon: [],
+      opponentPokemon: []
     }
   }
 
@@ -34,6 +36,9 @@ class App extends Component {
         <Pokedex catchPokemon={this.catchPokemon} />
         <MyPokemon
           pokemon={this.state.myPokemon}
+        />
+        <Opponent 
+          opponentPokemon={this.state.Pokemon}
         />
       </div>
     );
