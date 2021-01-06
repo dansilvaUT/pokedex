@@ -1,8 +1,10 @@
 import { Component } from 'react';
 import Pokedex from './components/Pokedex';
 import MyPokemon from './components/MyPokemon';
+import Opponents from './components/Opponents';
 import './App.css';
 import axios from 'axios';
+
 
 class App extends Component {
   constructor() {
@@ -29,12 +31,14 @@ class App extends Component {
   }
 
   render() {
+    console.log('opponents:', this.state.opponentPokemon);
     return (
       <div className="App">
         <Pokedex catchPokemon={this.catchPokemon} />
         <MyPokemon
           pokemon={this.state.myPokemon}
         />
+        <Opponents />
       </div>
     );
   }
