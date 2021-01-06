@@ -6,26 +6,36 @@ class Opponents extends Component {
     constructor() {
         super();
         this.state = {
-            yourPokemon: []
+            opponentPokemon: []
         }
     }
 
     componentDidMount() {
-        this.getMyPokemon();
+        this.getOpponents();
     }
 
-    getMyPokemon = () => {
-        axios.get('/api/pokemon')
-            .then(res => { this.setState({ yourPokemon: res.data }) })
-            .catch(err => console.log(`'Error: ${err.message}`));
+    getOpponents = () => {
+
+        for (let i = 0; i < 6; i++) {
+            axios.get('/api/pokemon')
+                .then(res => {
+                    this.setState({ opponentPokemon: [...this.state.opponentPokemon, ...res.data] })
+                })
+                .catch(err => console.log(`'Error: ${err.message}`));
+        }
+
     }
 
     render() {
-        console.log("opponents", this.state.yourPokemon)
+
         return (
             <section>
-                {this.state.yourPokemon.map((pokemon, index) => (
-                    <Opponent key={index} pokemon={pokemon} />
+                <h2>Opponents</h2>
+                {this.state.opponentPokemon.map((pokemon, index) => (
+                    <Opponent
+                        key={index}
+                        pokemon={pokemon}
+                    />
                 ))}
             </section>
         )

@@ -9,9 +9,7 @@ class Entry extends Component {
             image: entry.sprites.front_default,
             abilities: entry.abilities
         }
-
         catchPokemon(pokemon);
-
     }
     render() {
         const { entry } = this.props;
