@@ -31,7 +31,6 @@ class App extends Component {
   }
 
   render() {
-    console.log('opponents:', this.state.opponentPokemon);
     return (
       <div className="App">
         <Pokedex catchPokemon={this.catchPokemon} />

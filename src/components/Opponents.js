@@ -27,7 +27,6 @@ class Opponents extends Component {
     }
 
     render() {
-
         return (
             <section>
                 <h2>Opponents</h2>
