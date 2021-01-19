@@ -9,6 +9,7 @@ module.exports = {
 
     addPokemon: (req, res) => {
         const { pokemon } = req.body;
+        const db = req.app.get('db');
         const HP = Math.floor(Math.random() * 90);
         pokemon.id = id;
         pokemon.hp = HP;
