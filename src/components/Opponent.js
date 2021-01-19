@@ -1,4 +1,5 @@
 const Opponent = props => {
+    //TODO fix to this doesn't update everytime catch pokemon is called on entry
     const HP = Math.floor(Math.random() * 90);
     return (
         <section>
